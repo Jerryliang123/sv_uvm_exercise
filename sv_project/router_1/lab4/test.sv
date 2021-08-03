@@ -100,9 +100,9 @@ program automatic test(router_io.TB rtr_io);
 
     // send pad, 
     task send_pad();
-        rtr_io.cb.frame_n <= '0;
+        rtr_io.cb.frame_n[sa] <= '0;
         rtr_io.cb.din[sa] <= '1;
-        rtr_io.cb.valid_n <= '1;
+        rtr_io.cb.valid_n[sa] <= '1;
         repeat(5) @(rtr_io.cb);
     endtask
 
