@@ -30,7 +30,7 @@ task Driver::start();
             this.sem[this.da].get(1);
             this.send();
             this.out_box.put(this.pkt2send);
-            this.ssem[this.da].put(1);
+            this.sem[this.da].put(1);
         end
     join_none
 endtask
