@@ -5,22 +5,23 @@
     3.
 */
 class ReceiverBase;
-    
-    function new();
-        ;
-        
-    endfunction
+    virtual router_io.TB rtr_io;
+    string name;
+    bit[3:0] da;
+    logic [7:0] pkt2cmp_payload[$];
+    Packet pkt2cmp;
+
+    extern function new();
+    extern virtual task recv();
+    extern virtual task get_payload();
 
 endclass //ReceiverBase
 
-/* properties: 
-   methods:
-    1. 
-    2.
-    3.
-*/
-class Receiver;
-    function new();
-        
-    endfunction //new()
-endclass //Receiver
+function ReceiverBase::new();
+    ;
+    
+endfunction
+
+task ReceiverBase::recv();
+    
+endtask
