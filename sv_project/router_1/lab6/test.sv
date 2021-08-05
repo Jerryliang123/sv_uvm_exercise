@@ -27,7 +27,9 @@ program automatic test(router_io.TB rtr_io);
         foreach (sem[i])
             sem[i] = new(1);
         for (int i=0;i<drvr.size();i++)
-            drvr[i] = new($sformatf("rcvr[%0d],i"),i,sem,gen.out_box[i], sb.driver_mbox,rtr_io);
+            drvr[i] = new($sformatf("rcvr[%0d],i",i,sem,gen.out_box[i],sb.driver_mbox,rtr_io);
+        for (int i=0;i<rcvr.size();i++)
+            rcvr[i] = new($sformatf("rcvr[%0d]",i),i,sb.receiver_mbox,rtr_io);
         reset();
         gen.start();
         sb.start();
