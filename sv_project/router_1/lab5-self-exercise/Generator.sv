@@ -16,9 +16,9 @@ class generator;
     endfunction
 
     task gen;
-
-        this.pkt.randomize();
-
+        a1: assert(this.pkt.randomize()) $display("Successful generated");
     endfunction
 
 endclass //generator
+
+//v0.1
